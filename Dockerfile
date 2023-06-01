@@ -10,7 +10,7 @@ COPY . .
 
 RUN CGO_ENABLED=0 go build -o ./fizzbuzz
 
-FROM scratch
+FROM gcr.io/distroless/base
 COPY --from=builder /app/fizzbuzz /fizzbuzz
 COPY templates /templates
 
